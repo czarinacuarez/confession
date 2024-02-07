@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> ih</title>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="gdsc">
+                <div class="circle red"></div>
+                <div class="circle yellow"></div>
+                <div class="circle blue"></div>
+                <div class="circle green"></div>
+
+                <p> GDSC NU FAIRVIEW</p>
+            </div>
+
+            <div class="post-btn">
+                <button> Post Confession</button>
+            </div>
+            
+        
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="animate">
+            <span>G</span>
+            <span>D</span>
+            <span>S</span>
+            <span>C</span>
+        </div>
+    </div>
+
+    <footer>
+        <h5>&copy; Copyright 2024 | All rights reserved.<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Created by <span class="creator">Google Developer Student Clubs NU Fairview</span> 
+        </h5>
+
+        <div class="contacts">
+            <h5>Connect with us: </h5>
+            <div class="links">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-solid fa-envelope"></i>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const spans = document.querySelectorAll('.animate span');
+    
+        spans.forEach((span, idx) => {
+            span.addEventListener('click', (e) => {
+                e.target.classList.add('active');
+            });
+            span.addEventListener('animationend', (e) => {
+                e.target.classList.remove('active');
+            });
+            
+            // Initial animation
+            setTimeout(() => {
+                span.classList.add('active');
+            }, 100 * (idx+1))
+        });
+    </script>
+</body>
+
+
+</html>

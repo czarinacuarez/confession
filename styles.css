@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+a{
+    text-decoration: none;
+}
+
+footer{
+    position: fixed;
+    height: 4em;
+    width: 100%;
+    bottom: 0;
+    padding: 0 3em 0 0;
+    background-color: #FF8194;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6em;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    background-color: #FAF2E7;
+}
+
+.navbar{
+    display: flex;
+    background: #FF8194;
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9;
+}
+
+.nav-container{
+    width: 100%;
+    margin: 0;
+    padding: 0 5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.gdsc{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start; 
+}
+
+.gdsc p{
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.red { background-color: #FC3E3E; }
+.blue { background-color: #5D91F6; }
+.green { background-color: #54B94B; }
+.yellow { background-color: #FFC034; }
+
+.post-btn{
+    align-items: flex-end;
+}
+
+button{
+    font-family: 'Inter';
+    font-weight: 600;
+    border-radius: 9px;
+    padding: 10px 20px;
+    background-color: #F9476B; 
+    color: white; 
+    border: none; 
+    font-size: 16px; 
+    cursor: pointer; 
+    box-shadow: 0px 4px 4px rgba(72, 47, 47, 0.5); 
+    transition: transform 0.3s, box-shadow 0.3s;
+    
+}
+
+button:hover{
+    transform: translateY(-2px); /* Move button slightly up on hover */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+.contacts{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: -1.2rem;
+}
+.links{
+    display: flex;
+    font-size: 1.5rem;
+    margin-top: -1rem;
+    color: white;
+    gap: 1.5rem;
+}
+
+h5{
+    font-family: 'Inter';
+    font-weight: 100;
+    color: #fff;
+
+}
+.creator {
+    color: #F9476B;
+}
+
+.animate{
+    text-align: center;
+    font-family: 'Inter';
+    font-weight: bold;
+    perspective: 1000px;
+    margin-bottom: 100px;
+
+}
+
+.animate span {
+	cursor: pointer;
+	display: inline-block;
+	font-weight: 800;
+    font-size: 8rem;
+    color: #F9476B;
+	user-select: none;
+	line-height: .8;
+    letter-spacing: 10px;
+    text-shadow: rgb(255, 255, 255) -3px 5px 0px;
+}
+.animate span.active {
+    animation: toplong 1.5s linear;
+}
+
+@keyframes toplong {
+	10%, 40% {
+		transform: translateY(-10vh) scaleY(1);
+	}
+	
+	90% {
+		transform: translateY(-10vh) scaleY(1.5);
+	}
+}
+	
