@@ -1,51 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title> ih</title>
+    <title> Confession Wall</title>
     <meta charset="UTF-8">
-    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     
 </head>
-<body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="gdsc">
-                <div class="circle red"></div>
-                <div class="circle yellow"></div>
-                <div class="circle blue"></div>
-                <div class="circle green"></div>
+<body class="m-0 p-0 h-screen w-full">
+    <nav class="flex w-full shadow-md fixed text-white top-0 left-0" id="pink">
+        <div class="nav-container w-full m-0 px-20 py-2 flex justify-between items-center">
+            <div class="gdsc flex gap-2.5 items-center justify-start">
+                <div class="circle red w-5 h-5 rounded-full border-2 border-white" id="red"></div>
+                <div class="circle yellow w-5 h-5 rounded-full border-2 border-white" id="yellow"></div>
+                <div class="circle blue w-5 h-5 rounded-full border-2 border-white" id="blue"></div>
+                <div class="circle green w-5 h-5 rounded-full border-2 border-white" id="green"></div>
 
-                <p> GDSC NU FAIRVIEW</p>
+                <p class="font-semibold text-lg "> GDSC NU FAIRVIEW</p>
             </div>
 
             <div class="post-btn">
-                <button> Post Confession</button>
+                <button class="font-semibold rounded-lg px-5 py-2.5 text-base cursor-pointer shadow-sm" id="dark-pink"> Post Confession</button>
             </div>
-            
         
         </div>
     </nav>
 
-    <div class="container">
-        <div class="animate">
-            <span>G</span>
-            <span>D</span>
-            <span>S</span>
-            <span>C</span>
+    <div class="py-32 flex flex-col items-center h-screen w-full gap-1" id="cream">
+
+         <div class="animate">
+            <span>U</span>
+            <span>m</span>
+            <span>a</span>
+            <span>m</span>
+            <span>i</span>
+            <span>n</span>
+        
+            <span class="ml-4">K</span>
+            <span>a</span>
         </div>
+
+        <p class="mb-10"> A GDSC x Coda Valentines Special Project </p>
+
+    
+        <div class="mb-10">
+            <div class="relative">
+                <input
+                    type="search"
+                    class="block w-96 min-w-0 flex-auto rounded-full border border-solid border-gray-500 bg-transparent bg-clip-padding px-10 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3] focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(50,50,50)] focus:outline-none dark:border-neutral-600 dark:text-neutral-200 placeholder:text-gray-500 dark:focus:border-primary"
+                    id="exampleSearch"
+                    placeholder="Search"
+                />
+                <svg class="absolute left-3 top-[50%] transform -translate-y-1/2 fill-current text-neutral-500 w-6 h-6" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                </svg>
+            </div>
+        </div>
+        
+        
+
+
+        <div class="flex flex-col p-8 justify-center items-center w-64 h-80 gap-3 bg-purple-300 rounded-xl">
+            <p class="w-52 text-left text-white font-semibold text-xl">To: Mama mo</p>
+            <!-- Polaroid Frame -->
+            <div class="flex justify-center items-center w-52 h-64 bg-white rounded-xl"> 
+                <P class="text-lg">bading bading </P>
+            </div>
+
+            <p class="w-52 text-right text-black text-xs">4 minutes ago</p>
+        </div>
+        
     </div>
 
-    <footer>
+    <footer class="flex fixed h-16 w-full bottom-0 justify-center items-center gap-5 text-white" id="pink">
         <h5>&copy; Copyright 2024 | All rights reserved.<br>
             &nbsp;&nbsp;&nbsp;&nbsp;Created by <span class="creator">Google Developer Student Clubs NU Fairview</span> 
         </h5>
 
         <div class="contacts">
             <h5>Connect with us: </h5>
-            <div class="links">
+            <div class="links flex gap-3 text-2xl">
                 <i class="fa-brands fa-facebook"></i>
                 <i class="fa-solid fa-envelope"></i>
             </div>
@@ -69,7 +104,5 @@
             }, 100 * (idx+1))
         });
     </script>
+
 </body>
-
-
-</html>
