@@ -22,19 +22,9 @@ const firebaseConfig = {
     var name = getElementVal("name");
     var program = getElementVal("program");
     var msgContent = getElementVal("msgContent");
-    var selectedColor = getElementValue("color");
-  
-    function getElementValue(elementName) {
-      var elements = document.querySelectorAll('input[name="' + elementName + '"]:checked');
-    
-      if (elements.length > 0) {
-        return elements[0].value;
-      }
-    
-      // If none are checked
-      return null;
-    }
-    saveMessages(name, program, selectedColor, msgContent);
+    var date = getElementVal("date");
+ 
+    saveMessages(name, program, date, msgContent);
   
     //   enable alert
     document.querySelector(".alert").style.display = "block";
@@ -48,13 +38,13 @@ const firebaseConfig = {
     document.getElementById("confession").reset();
   }
   
-  const saveMessages = (name, program, selectedColor, msgContent) => {
+  const saveMessages = (name, program, date, msgContent) => {
     var newContactForm = confessionDB.push();
   
     newContactForm.set({
       name: name,
       program: program,
-      selectedColor:selectedColor,
+      date:date,
       msgContent: msgContent,
     });
   };
@@ -65,4 +55,3 @@ const firebaseConfig = {
   };
   
   
-  // kc
