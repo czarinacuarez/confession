@@ -5,44 +5,60 @@
     <link rel="stylesheet" href="send.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/4b9ba14b0f.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css"  rel="stylesheet" />
+
 </head>
-<body>
 
-    <nav class="flex w-full shadow-md fixed text-white top-0 left-0 z-10" id="pink-nav">
-        <div class="nav-container w-full m-0 px-20 py-2 flex justify-between items-center">
-            <div class="gdsc flex gap-2.5 items-center justify-start">
-                <div class="circle red w-5 h-5 rounded-full border-2 border-white" id="red-logo"></div>
-                <div class="circle yellow w-5 h-5 rounded-full border-2 border-white" id="yellow-logo"></div>
-                <div class="circle blue w-5 h-5 rounded-full border-2 border-white" id="blue-logo"></div>
-                <div class="circle green w-5 h-5 rounded-full border-2 border-white" id="green-logo"></div>
+<nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+              <div class="circle hidden md:block red w-5 h-5 rounded-full border-2 border-white" id="red"></div>
+              <div class="circle hidden md:block  yellow w-5 h-5 rounded-full border-2 border-white" id="yellow"></div>
+              <div class="circle hidden md:block  blue w-5 h-5 rounded-full border-2 border-white" id="blue"></div>
+              <div class="circle hidden md:block  green w-5 h-5 rounded-full border-2 border-white" id="green"></div>
+              <span class = "ps-2 font-bold"> GDSCNUFV</span>
+      </a>
+      
+    <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+        <a href = "send.html" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Post a Confession</a>
+        <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+          </svg>
+      </button>
+    </div>
+    <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+      <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+        <li>
+          <a href="index.html" class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500">Home</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+  </nav>
 
-                <p class="font-semibold text-lg "> GDSC NU FAIRVIEW</p>
-            </div>
-
-            <div class="post-btn">
-                <button class="font-semibold rounded-lg px-5 py-1 text-base cursor-pointer shadow-sm" id="dark-pink"> Post Confession</button>
-            </div>
-        
-        </div>
-    </nav>
-
-    <section class = "flex flex-col py-16 h-screen">
-
-        <p class="ml-6 text-4xl text-pink-600 font-bold z-10"> Witty</p>
+  
+<body class = "mt-28">
+        <!-- <p class="ml-6 text-4xl text-pink-600 font-bold z-10"> Witty</p> -->
     
-        <div class="custom-shape-divider-top-1707634829">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M598.97 114.72L0 0 0 120 1200 120 1200 0 598.97 114.72z" class="shape-fill"></path>
-            </svg>
-        </div>
 
-        <div class = "flex items-center justify-center p-20">
-            <form class="w-3/5" action="" id="confession">
+        <div>
+            <div class="custom-shape-divider-top-1707634829">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M598.97 114.72L0 0 0 120 1200 120 1200 0 598.97 114.72z" class="shape-fill"></path>
+                </svg>
+            </div>    
+        </div>
+       
+        <div class = "flex py-16 md:py-3 lg:py-4 items-center justify-center">
+            <form class="md:w-3/5 w-full  px-5" action="" id="confession">
                 <div class = "flex flex-col-2 justify-center gap-5">
-                    <div class = "w-3/5">
-                        <h1 class = "text-xl font-bold py-2" id="text-pink">Create a Secret Message</h1>
+                    <div class = "lg:w-3/5 w-full">
+                        <h1 class = "text-2xl font-bold py-2" id="text-pink">Create a Secret Message</h1>
                         <div class ="py-2">
                             <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">To:</label>
                             <input type="text"  id="name" class="border border-pink-600 text-gray-900 text-sm rounded-lg  focus:outline-none block w-full p-2.5" required>
@@ -64,21 +80,8 @@
                             <button type="submit" id="submit" class="w-1/4  mx-auto text-white bg-pink-600 hover:bg-pink-400 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-3 text-center">Post</button>
                         </div>
                     </div>
-                    <div class="flex md:flex-col flex-row gap-4 justify-center">
-                        <input type="radio" name="color" id="red" value="red" class="custom-radio" required>
-                        <input type="radio" name="color" id="yellow" value="yellow" class="custom-radio" required>
-                        <input type="radio" name="color" id="blue" value="blue" class="custom-radio" required>
-                        <input type="radio" name="color" id="purple" value="purple" class="custom-radio" required>
-                        <input type="radio" name="color" id="green" value="green" class="custom-radio" required>
-                        <input type="radio" name="color" id="pink" value="pink" class="custom-radio" required>
-
-
                 </div>
-                </div>
-                
             </form>
-
-            
         </div>
 
         <div class="custom-shape-divider-bottom-1707636174">
@@ -87,22 +90,23 @@
             </svg>
         </div>
 
-    </section>
 
-    <footer class="flex fixed h-16 w-full bottom-0 justify-center items-center gap-5 text-white" id="pink-nav">
-        <h5>&copy; Copyright 2024 | All rights reserved.<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;Created by <span id="text-pink">Google Developer Student Clubs NU Fairview</span> 
-        </h5>
+      
 
-        <div class="contacts">
-            <h5>Connect with us: </h5>
-            <div class="links flex gap-3 text-2xl">
-                <i class="fa-brands fa-facebook"></i>
-                <i class="fa-solid fa-envelope"></i>
-            </div>
-        </div>
+        
+    <footer class="fixed bottom-0 left-0 z-20 w-full p-4 bg-white border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 dark:border-gray-600">
+        <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="" class="hover:underline">Google Developer Student Clubs NU Fairview</a> | All Rights Reserved.
+        </span>
+        <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+            <li>
+                <a href="#" class="hover:underline me-4 md:me-6">Connect with us:</a>
+            </li>
+            <li>
+                <a href="#" class=" me-4 md:me-6 cursor-pointer"><i class="fa-brands fa-facebook"></i>
+                </a>
+            </li>
+        </ul>
     </footer>
-   
 
     
 
@@ -113,6 +117,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./firebase.js"></script>
     <script src="./script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
 
 
 </body>
