@@ -1,4 +1,5 @@
 
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyCBHLkEHuq0AloJT6PmfBbMdNiU48exOFQ",
@@ -23,20 +24,21 @@ const firebaseConfig = {
     var program = getElementVal("program");
     var msgContent = getElementVal("msgContent");
     var date = getElementVal("date");
- 
+
+
     saveMessages(name, program, date, msgContent);
+
+   
+    Swal.fire({
+      title: "Message Sent!",
+      text: "Your message has been successfully sent!",
+      icon: "success"
+    });
+ 
   
-    //   enable alert
-    document.querySelector(".alert").style.display = "block";
-  
-    //   remove the alert
-    setTimeout(() => {
-      document.querySelector(".alert").style.display = "none";
-    }, 3000);
-  
-    //   reset the form
     document.getElementById("confession").reset();
-  }
+
+   }
   
   const saveMessages = (name, program, date, msgContent) => {
     var newContactForm = confessionDB.push();
