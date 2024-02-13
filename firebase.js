@@ -20,8 +20,8 @@ const firebaseConfig = {
    function submitForm(e) {
     e.preventDefault();
   
-    var name = getElementVal("name");
-    var msgContent = getElementVal("msgContent");
+    var name = getElementVal("name").replace(/'/g, '');
+    var msgContent = getElementVal("msgContent").replace(/'/g, '');
     var date = getElementVal("date");
 
 
