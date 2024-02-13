@@ -21,12 +21,11 @@ const firebaseConfig = {
     e.preventDefault();
   
     var name = getElementVal("name");
-    var program = getElementVal("program");
     var msgContent = getElementVal("msgContent");
     var date = getElementVal("date");
 
 
-    saveMessages(name, program, date, msgContent);
+    saveMessages(name, date, msgContent);
 
    
     Swal.fire({
@@ -36,16 +35,19 @@ const firebaseConfig = {
     });
  
   
-    document.getElementById("confession").reset();
+
+    // Reload the page after a short delay (adjust the timeout value as needed)
+    setTimeout(function() {
+      window.location.reload();
+  }, 1000); //
 
    }
   
-  const saveMessages = (name, program, date, msgContent) => {
+  const saveMessages = (name, date, msgContent) => {
     var newContactForm = confessionDB.push();
   
     newContactForm.set({
       name: name,
-      program: program,
       date:date,
       msgContent: msgContent,
     });
@@ -57,3 +59,75 @@ const firebaseConfig = {
   };
   
   
+
+// Function to show the modal
+function showModal(data) {
+  data = JSON.parse(decodeURIComponent(data));
+
+  // Update modal content with data for the clicked entry
+  document.getElementById('to-modal-content').textContent = "" + data.name;
+  document.getElementById('date-modal-content').textContent = "" + data.date;
+  document.getElementById('message-modal-content').textContent = data.msgContent;
+
+  // Show the modal
+  document.getElementById('customModal').classList.remove('hidden');
+}
+
+
+
+// Function to handle DOMContentLoaded event
+function onDOMContentLoaded() {
+  console.log('DOM is ready!');
+ 
+  $("#simple-search").on('keyup', function(){
+      let value = $(this).val().toLowerCase();  
+      $('#main-grid a[data-name]').each(function () {
+        if ($(this).text().toLowerCase().indexOf(value) === -1) {
+            $(this).hide();
+        } else {
+            $(this).show();
+        }
+      });
+    });
+  confessionDB.orderByKey().once("value")
+      .then(function (snapshot) {
+          // Check if there are any children
+          if (snapshot.exists()) {
+              // Get the parent element where you want to append the entry content
+              const parentElement = document.getElementById('main-grid');
+              const entries = [];
+
+              // Iterate through each child snapshot and store data in an array
+              snapshot.forEach(function (childSnapshot) {
+                  const data = childSnapshot.val();
+                  if (data !== null && typeof data !== 'undefined') {
+                      entries.push(data);
+                  }
+              });
+
+              entries.reverse();
+                // Update the HTML content of the parent element
+          entries.forEach(function (data) {
+              parentElement.innerHTML += `
+                  <a id="displayContainer" data-name="${data.name}" onclick="showModal('${encodeURIComponent(JSON.stringify(data))}')" class="block cursor-pointer bg-rose-300 max-w-2xl p-8 border border-gray-200 rounded-lg shadow overflow-hidden">
+                      <h5 id="to-label" class="mb-2 text-xl text-white inline whitespace-normal break-all font-semibold"> ${data.name}</h5>
+                      <div id="" class="bg-white my-2 rounded-xl p-5 max-w-full">
+                          <p id="message-content" class="font-normal line-clamp-2 whitespace-normal break-all lg:text-base md:text-sm text-xs text-gray-500 dark:text-gray-400 overflow-hidden">
+                              ${data.msgContent}
+                          </p>
+                      </div>
+                      <p id="date-content" class="font-normal text-right py-1 text-white dark:text-gray-400 overflow-hidden max-w-full">Posted ${data.date}</p>
+                  </a>
+              `;
+          });
+      } else {
+          console.error("No data found in the database");
+      }
+  })
+  .catch(function (error) {
+      console.error("Error reading data: ", error);
+  });
+}
+
+// Add event listener for DOMContentLoaded
+document.addEventListener('DOMContentLoaded', onDOMContentLoaded);
